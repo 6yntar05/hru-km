@@ -1,9 +1,9 @@
 # hru-km
-The hru linux kernel module
+The hru linux kernel modulegrin
+
+![hru](hru.png)
 
 ## Building
----
-Read Makefile
-
+- `sudo make`
 
 inspired by [~begs/hru](git.sr.ht/~begs/hru)
