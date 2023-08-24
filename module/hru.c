@@ -20,6 +20,7 @@ static ssize_t device_read(struct file *, char *, size_t, loff_t *);
 static ssize_t device_write(struct file *, const char *, size_t, loff_t *);
 
 static struct file_operations file_ops = {
+    .owner = THIS_MODULE,
     .read = device_read,
     .write = device_write,
     .open = device_open,
@@ -106,7 +107,7 @@ static int __init hru_init(void) {
     device_num = MKDEV(device_major_num, 0);  // Create a 32 bit version of numbers
 
         // Create /sys/class/hru in preparation of creating /dev/hru
-    device_class = class_create(THIS_MODULE, DEVICE_NAME);
+    device_class = class_create(DEVICE_NAME);
     if (IS_ERR(device_class)) {
         printk(KERN_WARNING "hru: Cannot create device class :(\n");
         unregister_chrdev_region(device_num, 1);

@@ -1,0 +1,26 @@
+{
+    "configurations": [
+        {
+            "name": "Linux Kernel Module",
+            "includePath": [
+                "${default}",
+                "${workspaceFolder}/module",
+                "/lib/modules/${uname -r}/build",
+                "/lib/modules/${uname -r}/build/include",
+                "/lib/modules/${uname -r}/build/include/uapi/",
+                "/lib/modules/${uname -r}/build/arch/x86/include",
+                "/lib/modules/${uname -r}/build/arch/x86/include/generated/",
+                "/lib/modules/${uname -r}/build/arch/x86/include/generated/uapi/",
+                "/lib/modules/${uname -r}/build/arch/x86/include/uapi/"
+            ],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu17",
+            "defines": [
+                "__GNUC__",
+                "__KERNEL__"
+            ],
+            "configurationProvider": "ms-vscode.makefile-tools"
+        }
+    ],
+    "version": 4
+}
